@@ -1,0 +1,6 @@
+
+<app-pokemon-component
+  [pokemon]="(pokeList | async) || []"
+  [isLoading]="(isLoading | async) || false"
+></app-pokemon-component>
+
