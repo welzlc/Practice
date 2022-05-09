@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { PokemonComponent } from './pokemon/pokemon.component';
-import { PokemonContainer } from './pokemon/pokemon.container';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { PokemonContainer } from './containers/pokemon/pokemon.container';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { pokeReducer } from './state/poke.reducer';

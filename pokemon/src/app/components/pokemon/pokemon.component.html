@@ -1,0 +1,9 @@
+<div *ngIf="isLoading">
+  <h2>Loading ...</h2>
+</div>
+<div *ngIf="!isLoading">
+  <div *ngFor="let poke of pokemon">
+    {{poke.id}} {{poke.name}}
+  </div>
+</div>
+

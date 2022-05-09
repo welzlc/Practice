@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Poke } from '../poke';
-import { PokeService } from '../poke.service';
-import { loadPokemon } from '../state/poke.action';
+import { Poke } from '../../poke';
+import { PokeService } from '../../poke.service';
+import { loadPokemon } from '../../state/poke.action';
 
 @Component({
   selector: 'app-pokemon-component',
