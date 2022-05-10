@@ -1,8 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Poke } from '../../poke';
-import { PokeService } from '../../poke.service';
-import { loadPokemon } from '../../state/poke.action';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Poke } from '../../interfaces/poke';
 
 @Component({
   selector: 'app-pokemon-component',
@@ -12,13 +9,11 @@ import { loadPokemon } from '../../state/poke.action';
 export class PokemonComponent implements OnInit {
   @Input() pokemon: Poke[] = [];
   @Input() isLoading = false;
+  @Input() isError = false;
 
-  // TODO: create selector and read data from state once available > Observable here
+  @Output() pokemonClicked = new EventEmitter<number>();
 
   constructor() {}
 
-  ngOnInit(): void {
-    // this.pokeService.getAll();
-    // TODO: dispatch loadPokemon action
-  }
+  ngOnInit(): void {}
 }

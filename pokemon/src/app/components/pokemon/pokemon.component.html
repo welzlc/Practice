@@ -1,9 +1,15 @@
+
 <div *ngIf="isLoading">
   <h2>Loading ...</h2>
 </div>
+<div *ngIf="isError">
+  <h2>Failed to load! :(</h2>
+</div>
 <div *ngIf="!isLoading">
   <div *ngFor="let poke of pokemon">
-    {{poke.id}} {{poke.name}}
+    <button (click)="pokemonClicked.emit(poke.id)">
+      {{poke.id}} {{poke.name}}
+    </button>
   </div>
 </div>
 

@@ -1,16 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
-import { Poke } from '../poke';
-import { loadPokemon, loadPokemonSuccess } from './poke.action';
-
-export type PokeState = {
-  isLoading: boolean;
-  data: Poke[];
-};
-
-const initialState: PokeState = {
-  isLoading: false,
-  data: [],
-};
+import { Poke } from '../interfaces/poke';
+import {
+  loadPokeDetails,
+  loadPokemon,
+  loadPokemonFailed,
+  loadPokemonSuccess,
+} from './poke.action';
+import { initialState } from './poke.state';
 
 export const pokeReducer = createReducer(
   initialState,
@@ -19,14 +15,31 @@ export const pokeReducer = createReducer(
     return {
       ...state,
       isLoading: true,
+      isError: false,
     };
   }),
-  on(loadPokemonSuccess, (state, { pokemons }) => {
+  on(loadPokemonSuccess, (state, { pokemon }) => {
     console.log('[loadPokemonSuccess] original state', JSON.stringify(state));
     return {
       ...state,
       isLoading: false,
-      data: pokemons,
+      isError: false,
+      data: pokemon,
+    };
+  }),
+  on(loadPokemonFailed, (state) => {
+    console.log('[loadPokemonFailed] original state', JSON.stringify(state));
+
+    return {
+      ...state,
+      isLoading: false,
+      isError: true,
+    };
+  }),
+  on(loadPokeDetails, (state) => {
+    console.log('[loadPokeDetails] original state', JSON.stringify(state));
+    return {
+      ...state,
     };
   })
 );

@@ -1,11 +1,16 @@
 import { createAction, props } from '@ngrx/store';
-import { Poke } from '../poke';
+import { Poke } from '../interfaces/poke';
 
 export const loadPokemon = createAction('[Pokemon Component] Load Pokemon');
 export const loadPokemonSuccess = createAction(
   '[Pokemon Component] Pokemon Loaded Success',
-  props<{ pokemons: Poke[] }>()
+  props<{ pokemon: Poke[] }>()
 );
-export const loadPokemonFailure = createAction(
-  '[Pokemon Component] Pokemon Loaded Failure'
+export const loadPokemonFailed = createAction(
+  '[Pokemon Component] Pokemon Loaded Failed'
+);
+
+export const loadPokeDetails = createAction(
+  '[PokeDetails Component] Load Poke Details',
+  props<{ id: number }>()
 );

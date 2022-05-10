@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector, State } from '@ngrx/store';
-import { PokeState } from './poke.reducer';
+import { PokeState } from './poke.state';
 
 export const selectPokeState = createFeatureSelector<PokeState>('poke');
 
@@ -11,4 +11,9 @@ export const selectAllPokemon = createSelector(selectPokeState, (state) => {
 export const selectIsLoading = createSelector(
   selectPokeState,
   (state) => state.isLoading
+);
+
+export const selectIsError = createSelector(
+  selectPokeState,
+  (state) => state.isError
 );
