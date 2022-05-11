@@ -3,6 +3,6 @@
   [pokemon]="(pokeList | async) || []"
   [isLoading]="(isLoading | async) || false"
   [isError]="(isError | async) || false"
-  (pokemonClicked)="loadPokeDetails"
+  (pokemonClicked)="loadPokeDetails($event)"
 ></app-pokemon-component>
 

@@ -22,7 +22,7 @@ export class PokemonContainer implements OnInit {
     this.store.dispatch(loadPokemon());
   }
 
-  loadPokeDetails(id: number): void {
-    this.store.dispatch(loadPokeDetails({ id }));
+  loadPokeDetails(url: string): void {
+    this.store.dispatch(loadPokeDetails({ url }));
   }
 }

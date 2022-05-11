@@ -12,24 +12,16 @@ import { EffectsModule } from '@ngrx/effects';
 import { pokeReducer } from './state/poke.reducer';
 import { PokeEffects } from './state/poke.effects';
 import { PokeDetailsComponent } from './components/poke-details/poke-details/poke-details.component';
-import { StatusComponent } from './components/status/status.component';
-import { StatusContainer } from './containers/status/status.container';
+
 import { PokeDetailsContainer } from './containers/poke-details/poke-details.container';
-import { ShellComponent } from './components/shell/shell.component';
-import { ShellContainer } from './containers/shell/shell.container';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShellComponent,
-    ShellContainer,
-    StatusComponent,
-    StatusContainer,
     PokemonComponent,
     PokemonContainer,
     PokeDetailsComponent,
     PokeDetailsContainer,
-    ShellComponent,
   ],
   imports: [
     BrowserModule,

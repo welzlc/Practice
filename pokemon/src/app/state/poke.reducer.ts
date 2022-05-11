@@ -1,7 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
-import { Poke } from '../interfaces/poke';
 import {
   loadPokeDetails,
+  loadPokeDetailsFailed,
+  loadPokeDetailsSuccess,
   loadPokemon,
   loadPokemonFailed,
   loadPokemonSuccess,
@@ -40,6 +41,31 @@ export const pokeReducer = createReducer(
     console.log('[loadPokeDetails] original state', JSON.stringify(state));
     return {
       ...state,
+      isLoading: true,
+    };
+  }),
+  on(loadPokeDetailsSuccess, (state, { pokeDetails }) => {
+    console.log(
+      '[loadPokeDetailsSuccess] original state',
+      JSON.stringify(state)
+    );
+    return {
+      ...state,
+      isLoading: false,
+      isError: false,
+      currentPokeDetails: pokeDetails,
+    };
+  }),
+  on(loadPokeDetailsFailed, (state) => {
+    console.log(
+      '[loadPokeDetailsFailed] original state',
+      JSON.stringify(state)
+    );
+    return {
+      ...state,
+      isLoading: false,
+      isError: true,
+      currentPokeDetails: undefined,
     };
   })
 );

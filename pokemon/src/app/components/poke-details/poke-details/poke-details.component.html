@@ -1,1 +1,7 @@
+<div *ngIf="pokeDetails">
+  <img src="{{pokeDetails.spriteUrl}}">
+  <div *ngFor="let stat of pokeDetails.stats">
+    <p>{{stat.name}}: {{stat.value}}</p>
+  </div>
 
+</div>

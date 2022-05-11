@@ -11,7 +11,7 @@ export class PokemonComponent implements OnInit {
   @Input() isLoading = false;
   @Input() isError = false;
 
-  @Output() pokemonClicked = new EventEmitter<number>();
+  @Output() pokemonClicked = new EventEmitter<string>();
 
   constructor() {}
 
