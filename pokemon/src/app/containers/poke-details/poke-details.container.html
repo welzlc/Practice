@@ -1,3 +1,5 @@
 <app-poke-details-component
+  [isLoading]="(isLoading | async) || false"
+  [isError]="(isError | async) || false"
   [pokeDetails]="(pokeDetails | async) || undefined"
 ></app-poke-details-component>

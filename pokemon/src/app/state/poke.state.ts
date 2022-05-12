@@ -5,12 +5,10 @@ export type PokeState = {
   isLoading: boolean;
   isError: boolean;
   data: Poke[];
-  currentPokeDetails: PokeDetails | undefined;
 };
 
-export const initialState: PokeState = {
+export const initialPokeState: PokeState = {
   isLoading: false,
   isError: false,
   data: [],
-  currentPokeDetails: undefined,
 };

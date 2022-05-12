@@ -9,7 +9,7 @@ import {
   loadPokemon,
   loadPokemonFailed,
   loadPokemonSuccess,
-} from './poke.action';
+} from './poke.actions';
 
 @Injectable()
 export class PokeEffects {
@@ -25,6 +25,11 @@ export class PokeEffects {
     );
   });
 
+  constructor(private actions$: Actions, private pokeService: PokeService) {}
+}
+
+@Injectable()
+export class PokeDetailsEffects {
   loadPokeDetails$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadPokeDetails),

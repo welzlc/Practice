@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { loadPokeDetails, loadPokemon } from '../../state/poke.action';
+import { loadPokeDetails, loadPokemon } from '../../state/poke.actions';
 import {
   selectAllPokemon,
   selectIsError,
   selectIsLoading,
-} from '../../state/poke.selector';
+} from '../../state/poke.selectors';
 
 @Component({
   selector: 'app-pokemon-container',
@@ -19,10 +19,7 @@ export class PokemonContainer implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
+    console.log('Pokemon onInit!');
     this.store.dispatch(loadPokemon());
-  }
-
-  loadPokeDetails(url: string): void {
-    this.store.dispatch(loadPokeDetails({ url }));
   }
 }

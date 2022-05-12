@@ -7,11 +7,10 @@
 </div>
 <div *ngIf="!isLoading">
   <div *ngFor="let poke of pokemon">
-    <button (click)="pokemonClicked.emit(poke.url)">
+    <button [routerLink]="['/pokemon', poke.id]">
       {{poke.id}} {{poke.name}}
     </button>
   </div>
-  <app-poke-details-container></app-poke-details-container>
 </div>
 
 

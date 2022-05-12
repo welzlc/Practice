@@ -1,7 +1,14 @@
-<div *ngIf="pokeDetails">
+<button routerLink="/">back</button>
+<div *ngIf="isLoading">
+  <h2>Loading ...</h2>
+</div>
+<div *ngIf="isError">
+  <h2>Failed to load! :(</h2>
+</div>
+<div *ngIf="!isLoading && pokeDetails">
   <img src="{{pokeDetails.spriteUrl}}">
+  <h2>{{pokeDetails.name}}</h2>
   <div *ngFor="let stat of pokeDetails.stats">
     <p>{{stat.name}}: {{stat.value}}</p>
   </div>
-
 </div>

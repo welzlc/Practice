@@ -1,3 +1,5 @@
+export const ServerUrl = 'https://pokeapi.co/api/v2/pokemon/';
+
 export interface PokeServer {
   name: string;
   url: string;
@@ -17,9 +19,6 @@ export interface PokeDetailsServer {
 }
 
 export interface SpriteServer {
-  //id: number;
-  //name: string;
-  //url: string;
   front_default: string;
 }
 

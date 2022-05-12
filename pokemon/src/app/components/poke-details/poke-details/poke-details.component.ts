@@ -7,6 +7,8 @@ import { PokeDetails } from 'src/app/interfaces/poke-details';
   styleUrls: ['./poke-details.component.css'],
 })
 export class PokeDetailsComponent implements OnInit {
+  @Input() isLoading = false;
+  @Input() isError = false;
   @Input() pokeDetails: PokeDetails | undefined = undefined;
 
   constructor() {}
