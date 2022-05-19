@@ -1,15 +1,18 @@
 import { createAction, props } from '@ngrx/store';
 import { Poke } from '../interfaces/poke';
 import { PokeDetails } from '../interfaces/poke-details';
+import {
+  loadPokemonActionType,
+  loadPokemonFailedActionType,
+  loadPokemonSuccessActionType,
+} from './poke.action-types';
 //Pokemon
-export const loadPokemon = createAction('[Pokemon Component] Load Pokemon');
+export const loadPokemon = createAction(loadPokemonActionType);
 export const loadPokemonSuccess = createAction(
-  '[Pokemon Component] Pokemon Loaded Success',
+  loadPokemonSuccessActionType,
   props<{ pokemon: Poke[] }>()
 );
-export const loadPokemonFailed = createAction(
-  '[Pokemon Component] Pokemon Loaded Failed'
-);
+export const loadPokemonFailed = createAction(loadPokemonFailedActionType);
 
 //PokeDetails
 export const loadPokeDetails = createAction(

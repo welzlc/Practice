@@ -9,6 +9,7 @@ import {
   ServerUrl,
 } from '../interfaces/server';
 import { mapPokeDetailsServer } from '../helpers/pokeDetails.helper';
+import { PokeDetails } from '../interfaces/poke-details';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,7 @@ export class PokeService {
       .pipe(map(mapPokeServerResult));
   }
 
-  getPokeDetailsByUrl(url: string): Observable<any> {
+  getPokeDetailsByUrl(url: string): Observable<PokeDetails> {
     return this.http
       .get<PokeDetailsServer>(url)
       .pipe(map(mapPokeDetailsServer));

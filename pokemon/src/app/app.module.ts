@@ -34,6 +34,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: 'pokemon', component: PokemonContainer },
       { path: 'pokemon/:id', component: PokeDetailsContainer },
+      //{ path: 'rxjs'}
       { path: '', redirectTo: 'pokemon', pathMatch: 'full' },
     ]),
   ],

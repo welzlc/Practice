@@ -1,7 +1,6 @@
 export interface PokeDetails {
   id: number;
   name: string;
-  url: string;
   spriteUrl: string;
   stats: PokeDetailsStat[];
 }

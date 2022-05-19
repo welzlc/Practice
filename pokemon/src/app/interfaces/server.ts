@@ -15,7 +15,7 @@ export interface PokeDetailsServer {
   id: number;
   name: string;
   sprites: SpriteServer;
-  stats: [];
+  stats: PokeDetailsStatsServer[];
 }
 
 export interface SpriteServer {
