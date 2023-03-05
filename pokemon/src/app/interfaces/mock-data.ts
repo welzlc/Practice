@@ -1,6 +1,7 @@
 import { map, of } from 'rxjs';
 import { mapPokeDetailsServer } from '../helpers/pokeDetails.helper';
 import { initialPokeState } from '../state/poke.state';
+import { PokeDetailsState } from '../state/pokeDetails.state';
 import { Poke } from './poke';
 import { PokeDetails, PokeDetailsStat } from './poke-details';
 import {
@@ -39,4 +40,10 @@ export const pokeDetailsMock: PokeDetails = {
   name: 'poke-0-name',
   spriteUrl: 'poke-0-spriteUrl',
   stats: pokeDetailsStatsMock,
+};
+
+export const pokeDetailsStateMock: PokeDetailsState = {
+  isLoading: false,
+  isError: false,
+  pokeDetails: undefined,
 };
