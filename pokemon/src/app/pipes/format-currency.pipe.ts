@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { formatCurrency } from '../../helpers/helpers.api';
 
 export interface FormatCurrencyPipeArgument {
   currencyPrefix?: string;
@@ -27,7 +26,7 @@ export class FormatCurrencyPipe implements PipeTransform {
       args.currencyPrefix && !args.isPrefixLast
         ? args.currencyPrefix + this.space
         : ''
-    }${formatCurrency(Math.abs(value), '')}${
+    }${/*formatCurrency(*/ Math.abs(value) /*, '')*/}${
       args.currencyPrefix && args.isPrefixLast
         ? this.space + args.currencyPrefix
         : ''
